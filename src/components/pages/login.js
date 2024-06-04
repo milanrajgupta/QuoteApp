@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { setToken, setUser } from '../../utils/Slices/authSlice';
 import { useNavigate } from 'react-router-dom';
 
@@ -47,10 +49,16 @@ const {email,password}=formData;
       localStorage.setItem("user", JSON.stringify(data.user));
     //   console.log('Login successful', data.user);
     //   console.log("image",imageUrl)
-    navigate("/dashboard")
+    toast.success("Logged In", {
+        position: "top-center", 
+      });
+    navigate("/user/dashboard")
   
     } else {
-    
+      //   console.log("image",imageUrl)
+    toast.success(data.message, {
+        position: "top-center", 
+      });
       console.log('Login failed', data.message);
     }
 
@@ -58,13 +66,13 @@ const {email,password}=formData;
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Login</h2>
+    <div className="min-h-screen flex items-center justify-center ">
+      <div className="bg-[#1d7a8a] p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h2 className="text-2xl font-bold mb-6 text-white">Login</h2>
         <form onSubmit={handleSubmit}>
         
           <div className="mb-4">
-            <label className="block text-gray-700">Email</label>
+            <label className="block text-white">Email</label>
             <input
               type="email"
               name="email"
@@ -75,7 +83,7 @@ const {email,password}=formData;
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700">Password</label>
+            <label className="block text-white">Password</label>
             <input
               type="password"
               name="password"

@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Signup = () => {
 
   const navigate=useNavigate();
@@ -34,7 +37,9 @@ const {firstName,lastName,email,password}=formData;
 
     const data = await response.json();
     if (response.ok) {
-    
+      toast.success("Account Created", {
+        position: "top-center", 
+      });
       console.log('Login successful', data);
       navigate("/login");
      
@@ -47,12 +52,12 @@ const {firstName,lastName,email,password}=formData;
   };
 
   return (
-    <div className="min-h-screen flex items-center bg-gray-900 justify-center bg-r">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Sign Up</h2>
+    <div className="min-h-screen flex items-center justify-center bg-r">
+      <div className="bg-[#1d7a8a] p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h2 className="text-2xl font-bold mb-6 text-white">Sign Up</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-700">First Name</label>
+            <label className="block text-white ">First Name</label>
             <input
               type="text"
               name="firstName"
@@ -63,7 +68,7 @@ const {firstName,lastName,email,password}=formData;
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Last Name</label>
+            <label className="block text-white ">Last Name</label>
             <input
               type="text"
               name="lastName"
@@ -74,7 +79,7 @@ const {firstName,lastName,email,password}=formData;
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Email</label>
+            <label className="block text-white ">Email</label>
             <input
               type="email"
               name="email"
@@ -85,7 +90,7 @@ const {firstName,lastName,email,password}=formData;
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700">Password</label>
+            <label className="block  text-white">Password</label>
             <input
               type="password"
               name="password"
