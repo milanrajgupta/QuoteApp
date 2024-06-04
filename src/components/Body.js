@@ -13,10 +13,11 @@ const Body = () => {
   useEffect(() => {
     const fetchQuotes = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/quotes");
+        const response = await fetch("http://localhost:8000/");
         const data = await response.json();
         setQuotes(data);
         setSearchResults(data);
+        console.log(data)
         setLoading(false);
       } catch (error) {
         console.log("Error from fetching quotes", error);
@@ -74,17 +75,17 @@ const Body = () => {
   return loading ? (
     <Loader />
   ) : (
-    <div className="flex flex-col items-center  min-h-screen bg-gray-900 text-white p-4">
+    <div className="flex flex-col items-center  min-h-screen  text-white p-4">
       <h1 className="text-4xl font-bold mb-8">Quotes</h1>
-      <div className="flex gap-2">
+      <div className="flex  border-[#157788] gap-2">
         <input
           type="text"
           placeholder="Search by author name"
           value={searchTerm}
-          className="bg-gray-600 px-2 rounded-sm"
+          className="bg-[#157788] px-2 rounded-lg h-10"
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button onClick={handleSearch}><IoSearch/></button>
+        <button className="text-[#0e191b] text-[30px] " onClick={handleSearch}><IoSearch/></button>
       </div>
 
       {/* quote block */}
@@ -92,7 +93,7 @@ const Body = () => {
         {currentQuotes.map((quote, index) => (
           <div
             key={index}
-            className="max-w-xl bg-gray-800 p-6 rounded-lg shadow-lg text-center"
+            className="max-w-xl bg-[#157788] p-6 rounded-lg shadow-lg text-center"
           >
             <p className="text-lg italic mb-4">"{quote.q}"</p>
             <p className="text-right text-sm">— {quote.a}</p>
@@ -106,7 +107,7 @@ const Body = () => {
        <button
           onClick={() => paginate(currentPage - 1)}
           disabled={currentPage === 1}
-          className="px-3 py-1 rounded-lg bg-gray-600 text-white mr-2"
+          className="px-3 py-1 rounded-lg bg-[#157788] text-white mr-2"
         >
           Prev
         </button>
@@ -116,7 +117,7 @@ const Body = () => {
           <button
             key={page}
             onClick={() => paginate(page)}
-            className={`px-3 py-1 rounded-lg ${currentPage === page ? 'bg-gray-600 text-white' : 'bg-gray-400 text-gray-900'}`}
+            className={`px-3 py-1 rounded-lg ${currentPage === page ? 'bg-[#154851] text-white' : 'bg-[#45a1b1] text-gray-900'}`}
           >
             {page}
           </button>
@@ -126,7 +127,7 @@ const Body = () => {
         <button
           onClick={() => paginate(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="px-3 py-1 rounded-lg bg-gray-600 text-white ml-2"
+          className="px-3 py-1 rounded-lg bg-[#157788] text-white ml-2"
         >
           Next
         </button>
