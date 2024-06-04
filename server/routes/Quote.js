@@ -5,9 +5,9 @@ const {auth}=require("../middlewares/auth")
 const {getAllQuotes,createQuote,deleteQuote,getAllUserQuote}=require("../controllers/Quote")
 
 
-router.get("/getAll",getAllQuotes);
-router.post("/create-quote",createQuote);
-router.delete("/delete-quote",deleteQuote)
+router.post("/getall",auth ,getAllQuotes);
+router.post("/create-quote",auth,createQuote);
+router.delete("/delete-quote",auth,deleteQuote)
 router.post("/all-user-quote",getAllUserQuote)
 
 
