@@ -9,7 +9,7 @@ const connectDB=require("./config/database")
 const userRoutes=require("./routes/User")
 const quoteRoutes=require("./routes/Quote")
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json())
 app.use(cors());
@@ -37,6 +37,6 @@ app.get("/", (req, res) => {
 	});
 });
 
-app.listen(8000, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
