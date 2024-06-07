@@ -14,9 +14,7 @@ const Body = () => {
     const fetchQuotes = async () => {
       try {
         const response = await fetch("https://techplement-2.onrender.com/",
-          {
-            mode:'no-cors'
-          }
+         
         );
         const data = await response.json();
         setQuotes(data);
