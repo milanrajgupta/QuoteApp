@@ -74,3 +74,24 @@
     box-shadow: .2em -.2em 0 0 currentcolor;
   }
 }
+
+
+/* CSS */
+.scrollbar-container::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.scrollbar-container::-webkit-scrollbar-track {
+  background: #f3f3f3; /* Background color of the scrollbar track */
+  margin-left: 25px;
+}
+
+.scrollbar-container::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Rounded corners of the scrollbar thumb */
+  margin-left: 10px;
+}
+
+.scrollbar-container::-webkit-scrollbar-thumb:hover {
+  background: #873131; /* Color of the scrollbar thumb on hover */
+}
