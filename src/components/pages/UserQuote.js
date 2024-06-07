@@ -18,7 +18,7 @@ const UserQuote = () => {
 
     const fetchQuotes = async () => {
       try {
-        const response = await fetch("http://localhost:8000/quote/getall", {
+        const response = await fetch("http://localhost:5000/quote/getall", {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
