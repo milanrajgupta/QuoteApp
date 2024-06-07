@@ -77,7 +77,7 @@ const Body = () => {
   return loading ? (
     <Loader />
   ) : (
-    <div className="flex flex-col items-center  min-h-screen  text-white p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen  text-white p-4">
       <h1 className="text-4xl font-bold mb-8">Quotes</h1>
       <div className="flex  border-[#157788] gap-2">
         <input

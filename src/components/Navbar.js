@@ -39,7 +39,7 @@ const Navbar = () => {
     <div className="bg-[#157788] w-[100vw] text-white p-4 fixed top-0 flex  justify-center items-center z-50">
       <div className="w-[1200px]  flex justify-between ">
         <div className="text-xl font-bold">
-          <a href="/">Logo</a>
+          <a href="/">Quotopia</a>
         </div>
 
         {!token ? (
