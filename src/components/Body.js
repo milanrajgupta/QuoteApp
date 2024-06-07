@@ -13,7 +13,7 @@ const Body = () => {
   useEffect(() => {
     const fetchQuotes = async () => {
       try {
-        const response = await fetch("http://localhost:5000/");
+        const response = await fetch("https://techplement-2.onrender.com/");
         const data = await response.json();
         setQuotes(data);
         setSearchResults(data);
