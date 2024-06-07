@@ -14,13 +14,13 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json())
 
 app.use(cookieParser());
-app.use(
-	cors({
-		origin:"https://techplement-beige.vercel.app/",
-		// origin:"http://localhost:3000",
-		credentials:true,
-	})
-)
+// app.use(
+// 	cors({
+// 		origin:"https://techplement-beige.vercel.app/",
+// 		// origin:"http://localhost:3000",
+// 		credentials:true,
+// 	})
+// )
 connectDB();
 
 app.get('/', async (req, res) => {
