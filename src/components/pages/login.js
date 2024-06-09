@@ -27,7 +27,7 @@ const Login = () => {
 const {email,password}=formData;
   const handleSubmit =async (e) => {
     e.preventDefault();
-    const response = await fetch('https://techplement-2.onrender.com/api/auth/login', {
+    const response = await fetch('http://localhost:8000/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
