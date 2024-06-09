@@ -13,21 +13,21 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json())
 
-app.use(cookieParser());
-const corsOptions = {
-  origin: 'http://34.132.16.55:3000/',
-  credentials: true 
-};
+// app.use(cookieParser());
+// const corsOptions = {
+//   origin: 'http://34.132.16.55:3000/',
+//   credentials: true 
+// };
 app.use(cors());
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://34.132.16.55:3000/');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  next();
-});
+// app.use(cors(corsOptions));
+// app.options('*', cors(corsOptions));
+// app.use((req, res, next) => {
+//   res.setHeader('Access-Control-Allow-Origin', 'http://34.132.16.55:3000/');
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//   res.setHeader('Access-Control-Allow-Credentials', 'true');
+//   next();
+// });
 
 connectDB();
 
