@@ -5,12 +5,12 @@ exports.auth = async (req, res, next) => {
   try {
     console.log("BEFORE ToKEN EXTRACTION");
     
-    //    const {token} =req.body
+       const {token} =req.body
      
-    const token =
-      req.cookies.token ||
-      req.body.token ||
-      req.header("Authorization")?.replace("Bearer ", "");
+    // const token =
+    //   req.cookies.token ||
+    //   req.body.token ||
+    //   req.header("Authorization")?.replace("Bearer ", "");
     console.log("AFTER ToKEN EXTRACTION");
 
     if (!token) {
