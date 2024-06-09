@@ -25,7 +25,7 @@ const Dashboard = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        "http://localhost:8000/quote/all-user-quote",
+        "http://34.132.16.55:8000/quote/all-user-quote",
         {
           method: "POST",
           headers: {
@@ -58,7 +58,7 @@ const Dashboard = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await fetch("https://techplement-2.onrender.com/quote/create-quote", {
+      const response = await fetch("http://34.132.16.55:8000/quote/create-quote", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -102,7 +102,7 @@ const Dashboard = () => {
     );
     if (confirmDelete) {
       try {
-        await fetch("https://techplement-2.onrender.com/quote/delete-quote", {
+        await fetch("http://34.132.16.55:8000/quote/delete-quote", {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
