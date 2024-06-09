@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Loader from "./Loader";
 import { IoSearch } from "react-icons/io5";
 
+const BASE_URL=process.env.REACT_APP_BASE_URL;
 const Body = () => {
   const [quotes, setQuotes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,7 +14,7 @@ const Body = () => {
   useEffect(() => {
     const fetchQuotes = async () => {
       try {
-        const response = await fetch("http://34.132.16.55:8000/");
+        const response = await fetch(BASE_URL);
         const data = await response.json();
         setQuotes(data);
         setSearchResults(data);
