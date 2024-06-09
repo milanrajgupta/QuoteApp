@@ -69,6 +69,7 @@ const Dashboard = () => {
 
           userId: user._id,
           name: user.firstName + user.lastName,
+          token: token
         }),
       });
       const data = await response.json();
@@ -108,7 +109,8 @@ const Dashboard = () => {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
-          body: JSON.stringify({ quoteId: quoteId, userId: user._id }),
+          body: JSON.stringify({ quoteId: quoteId, userId: user._id,
+                               token: token}),
         });
         getAllUserQuotes();
         toast.success("Quote Deleted", {
