@@ -25,7 +25,7 @@ const Dashboard = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        "https://techplement-2.onrender.com/quote/all-user-quote",
+        "http://localhost:8000/quote/all-user-quote",
         {
           method: "POST",
           headers: {
