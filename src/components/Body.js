@@ -13,7 +13,7 @@ const Body = () => {
   useEffect(() => {
     const fetchQuotes = async () => {
       try {
-        const response = await fetch("http://localhost:8000/");
+        const response = await fetch("http://34.132.16.55:8000/");
         const data = await response.json();
         setQuotes(data);
         setSearchResults(data);
